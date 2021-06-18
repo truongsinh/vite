@@ -55,6 +55,10 @@ import { resolveHostname } from '../utils'
 import { searchForWorkspaceRoot } from './searchRoot'
 
 export interface ServerOptions {
+  /**
+   * default is "no-cache", but can be, for example, "max-age=0,stale-while-revalidate=31536000"
+   */
+  cacheControlHeader?: string
   socket?: string
   host?: string | boolean
   port?: number

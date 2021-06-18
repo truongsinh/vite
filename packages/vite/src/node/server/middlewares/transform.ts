@@ -177,7 +177,9 @@ export function transformMiddleware(
             type,
             result.etag,
             // allow browser to cache npm deps!
-            isDep ? 'max-age=31536000,immutable' : 'no-cache',
+            isDep
+              ? 'max-age=31536000,immutable'
+              : server.config.server.cacheControlHeader,
             result.map
           )
         }
